@@ -18,6 +18,20 @@ class App extends Component {
       [e.target.name]: e.target.value
     });
   }
+  // handle form submission of the app
+  handleSubmit(e) {
+    e.preventDefault();
+    const itemsRef = firebase.database().ref('items');
+    const item = {
+      title: this.state.currentItem,
+      user: this.state.username
+    }
+    itemsRef.push(item);
+    this.setState({
+      currentItem: '',
+      username: ''
+    });
+  }
   // render app component
   render() {
     return (
