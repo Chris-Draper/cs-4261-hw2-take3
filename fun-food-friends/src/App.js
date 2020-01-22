@@ -19,7 +19,7 @@ class App extends Component {
       [e.target.name]: e.target.value
     });
   }
-
+  // handle submission of the app form
   handleSubmit(e) {
     e.preventDefault();
     const itemsRef = firebase.database().ref('items');
