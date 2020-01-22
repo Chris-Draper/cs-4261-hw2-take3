@@ -12,6 +12,12 @@ class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
   }
+  // handle any changes in the app
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
   // render app component
   render() {
     return (
@@ -42,13 +48,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-// handle any changes in the app
-handleChange(e) {
-  this.setState({
-    [e.target.name]: e.target.value
-  });
 }
 
 export default App;
