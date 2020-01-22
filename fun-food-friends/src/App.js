@@ -10,6 +10,7 @@ class App extends Component {
       currentItem: '',
       username: ''
     }
+    this.handleChange = this.handleChange.bind(this);
   }
   // render app component
   render() {
@@ -42,4 +43,12 @@ class App extends Component {
     );
   }
 }
+
+// handle any changes in the app
+handleChange(e) {
+  this.setState({
+    [e.target.name]: e.target.value
+  });
+}
+
 export default App;
