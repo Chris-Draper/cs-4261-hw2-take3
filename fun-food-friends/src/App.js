@@ -10,6 +10,7 @@ class App extends Component {
       username: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // handle any changes in the app
   handleChange(e) {
@@ -22,20 +23,19 @@ class App extends Component {
     return (
       <div className='app'>
         <header>
-            <div className='wrapper'>
-              <h1>Fun Food Friends</h1>
-              
-            </div>
+          <div className='wrapper'>
+            <h1>Fun Food Friends</h1>
+          </div>
         </header>
         <div className='container'>
           <section className='add-item'>
-              <form>
-                <input type="text" name="username" placeholder="What's your name?" 
-                  onChange={this.handleChange} value={this.state.username}/>
-                <input type="text" name="currentItem" placeholder="What are you bringing?" 
-                  onChange={this.handleChange} value={this.state.currentItem}/>
-                <button>Add Item</button>
-              </form>
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" name="username" placeholder="What's your name?"
+                onChange={this.handleChange} value={this.state.username}/>
+              <input type="text" name="currentItem" placeholder="What are you bringing?"
+                onChange={this.handleChange} value={this.state.currentItem}/>
+              <button>Add Item</button>
+            </form>
           </section>
           <section className='display-item'>
             <div className='wrapper'>
